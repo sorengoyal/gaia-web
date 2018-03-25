@@ -1,0 +1,16 @@
+{% load static %}
+<html>
+    <head>
+        <title>Gaia</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'map_inspector/css/style.css' %}" />
+         <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry&key=AIzaSyA49kj7ma6Cp_ozkNEEOaabwSqdEEtiwtQ
+&v=3"></script>
+        <script data-main="{%static 'map_inspector/js/main' %}" src="{% static 'map_inspector/js/require.js' %}" ></script>
+
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+
+</html>
+
