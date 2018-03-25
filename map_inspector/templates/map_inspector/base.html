@@ -3,7 +3,7 @@
     <head>
         <title>Gaia</title>
         <link rel="stylesheet" type="text/css" href="{% static 'map_inspector/css/style.css' %}" />
-        <script src=""></script>
+        <script>var CSRF_TOKEN = '{{ csrf_token }}';</script>
         <script data-main="{%static 'map_inspector/js/main' %}" src="{% static 'map_inspector/js/require.js' %}" ></script>
 
     </head>

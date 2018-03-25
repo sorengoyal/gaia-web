@@ -1,12 +1,12 @@
-(function(global) {
+define([], function() {
   //Set up a temporary namespace
   var ajaxUtils = {};
 
   function getRequestObject() {
-    if(global.XMLHttpRequest)
+    if(window.XMLHttpRequest)
       return (new XMLHttpRequest());
     else
-        global.alert("Ajax is not supported");
+        window.alert("Ajax is not supported");
   }
 
   //GET Request
@@ -27,6 +27,7 @@
     };
     request.open("POST", requestUrl, true);
     request.setRequestHeader("Content-type", "application/json");
+    request.setRequestHeader("X-CSRFToken", CSRF_TOKEN)
     request.send(requestBody);
   };
   //Only calls provided 'responseHandler'
@@ -37,5 +38,5 @@
       responseHandler(request);
     }
   }
-  global.$ajaxUtils = ajaxUtils;
-}(window))
+  return ajaxUtils
+})
